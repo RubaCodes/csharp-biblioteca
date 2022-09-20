@@ -6,6 +6,8 @@ public class Bibilioteca {
     protected List<Movie> Movies = new List<Movie>();
     //lista Libri
     protected List<Book> Books = new List<Book>();
+    //list di prestiti
+    //protected List<Presitit>
     //aggiungi e rimuove utente dalla lista
     public void AddNewUser(User utente) {
         utente.Registrato = true;
