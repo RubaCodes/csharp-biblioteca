@@ -31,6 +31,8 @@ Console.WriteLine(risultati[0].Title);
 //test prestito
 
 bibilioteca.NuovoPrestito(nuovoFilm, userRegistrato, DateOnly.FromDateTime(DateTime.Now), DateOnly.FromDateTime(DateTime.Now));
+//se provo a effettuare un nuovo prestito con un utente non registrato , esso non viene creato
+bibilioteca.NuovoPrestito(nuovoFilm, userNonRegistrato, DateOnly.FromDateTime(DateTime.Now), DateOnly.FromDateTime(DateTime.Now));
 //test ricerca prestito, funzionante a meno di controlli
 Console.WriteLine("Nome del prestito");
 string nomeRicerca = Console.ReadLine();
@@ -50,3 +52,32 @@ if (ricercaPrestiti.Count > 0) {
     }
 }
 else Console.WriteLine("Nessun prestito registrato con quel nome utente");
+
+//bool continua = true;
+//while (continua)
+//{
+
+//    Console.WriteLine("----Cosa vuoi fare?----");
+//    Console.WriteLine("1 - Iscriviti; 2 - Cerca un libro; 0-esci dall'applicativo");
+//    int condition = Convert.ToInt32(Console.ReadLine());
+
+//    switch (condition) {
+//        case 0:
+//            continua = false;
+//            break;
+//        case 1:
+//            Console.WriteLine("Inserisci il tuo nome");
+//            string nome = Console.ReadLine();
+//            Console.WriteLine("Inserisci il tuo cognome");
+//            string cognome = Console.ReadLine();
+//            Console.WriteLine("Inserisci la tua email");
+//            string email = Console.ReadLine();
+//            Console.WriteLine("Inserisci la tua password");
+//            string password = Console.ReadLine();
+//            Console.WriteLine("Inserisci il tuo numero di telefono");
+//            double telefono = Convert.ToDouble(Console.ReadLine());
+//            bibilioteca.AddNewUser(new User(cognome, nome, email, password, telefono));
+//            break;
+//    }
+        
+//}
