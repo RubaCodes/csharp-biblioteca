@@ -16,10 +16,12 @@ Console.WriteLine(nuovoFilm.Title);
 Console.WriteLine(nuovoFilm.Durata);
 nuovoFilm.AuthorLastName = "Rossi";
 nuovoFilm.AuthorFirstName = "Mario";
+//test full name autore
 Console.WriteLine(nuovoFilm.FullAuthorName);
 bibilioteca.AddMovie(nuovoFilm);
 bibilioteca.AddBook(nuovoLibro);
-var risulati = bibilioteca.SearchProduct("Super");
+//risultati di ricerca
+List<Product> risulati = bibilioteca.SearchProduct("Potter");
 Console.WriteLine(risulati[0].Title);
 
 

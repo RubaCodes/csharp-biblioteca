@@ -32,21 +32,40 @@ public class Bibilioteca {
         Books.Remove(book);
     }
     //ricerca per utente
-    public List<Product> SearchProduct(string ricerca) {
+    public List<Product> SearchProduct(string titolo) {
         List<Product> risultati = new List<Product>();
         foreach (Movie movie in Movies)
         {
-            if (movie.Title.Contains(ricerca))
+            if (movie.Title.ToLower().Contains(titolo.ToLower()))
             {
                 risultati.Add(movie);
             }
         }
         foreach (Book book in Books) { 
-            if (book.Title.Contains(ricerca))
+            if (book.Title.ToLower().Contains(titolo.ToLower()))
             {
                risultati.Add(book);
             }
         }
         return risultati;
     }
+    //public List<Product> SearchProduct(string codice)
+    //{
+    //    List<Product> risultati = new List<Product>();
+    //    foreach (Movie movie in Movies)
+    //    {
+    //        if (movie.SerialCode.ToLower().Contains(codice.ToLower()))
+    //        {
+    //            risultati.Add(movie);
+    //        }
+    //    }
+    //    foreach (Book book in Books)
+    //    {
+    //        if (book.SerialCode.ToLower().Contains(codice.ToLower()))
+    //        {
+    //            risultati.Add(book);
+    //        }
+    //    }
+    //    return risultati;
+    //}
 }
