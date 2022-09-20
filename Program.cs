@@ -13,7 +13,7 @@ nuovoLibro.Pagine = 750;
 Console.WriteLine(nuovoLibro.Title);
 Console.WriteLine(nuovoLibro.Pagine);
 //nuovo film
-Movie nuovoFilm = new Movie("ad65452342fsd", "Superman il grande super eroe");
+Movie nuovoFilm = new Movie("ad65452342fsd", "Superman: il grande super eroe.");
 //test getter e setter nuovo film
 nuovoFilm.Durata = 98;
 Console.WriteLine(nuovoFilm.Title);
@@ -26,7 +26,7 @@ Console.WriteLine(nuovoFilm.FullAuthorName);
 bibilioteca.AddMovie(nuovoFilm);
 bibilioteca.AddBook(nuovoLibro);
 //risultati di ricerca
-List<Product> risultati = bibilioteca.SearchProduct("Potter");
+List<Product> risultati = bibilioteca.SearchProduct("harry");
 Console.WriteLine(risultati[0].Title);
 //test prestito
 
@@ -52,16 +52,17 @@ if (ricercaPrestiti.Count > 0) {
     }
 }
 else Console.WriteLine("Nessun prestito registrato con quel nome utente");
-
+//#region Wip
 //bool continua = true;
 //while (continua)
 //{
 
 //    Console.WriteLine("----Cosa vuoi fare?----");
-//    Console.WriteLine("1 - Iscriviti; 2 - Cerca un libro; 0-esci dall'applicativo");
+//    Console.WriteLine("1 - Iscriviti; 2 - Cerca un Prodotto; 0-esci dall'applicativo");
 //    int condition = Convert.ToInt32(Console.ReadLine());
 
-//    switch (condition) {
+//    switch (condition)
+//    {
 //        case 0:
 //            continua = false;
 //            break;
@@ -78,6 +79,27 @@ else Console.WriteLine("Nessun prestito registrato con quel nome utente");
 //            double telefono = Convert.ToDouble(Console.ReadLine());
 //            bibilioteca.AddNewUser(new User(cognome, nome, email, password, telefono));
 //            break;
+//        case 2:
+//            Console.WriteLine("Inserisci il nome del prodotto da cercare:");
+//            string prodottoSearch = Console.ReadLine();
+//            List<Product> risultatiSearch = bibilioteca.SearchProduct(prodottoSearch);
+//            if (risultatiSearch.Count == 0)
+//            {
+//                Console.WriteLine("Spiacente, nessun risultato trovato");
+//            }
+//            else {
+//                foreach (Product el in risultatiSearch)
+//                {
+//                    Console.WriteLine("Nome e codice identificativo");
+//                    Console.WriteLine(el.Title + " " + el.SerialCode);
+//                    Console.WriteLine("Categoria");
+//                    Console.WriteLine(el.Category);
+
+//                }
+//            }
+//            break;
+
 //    }
-        
+
+//    #endregion
 //}
