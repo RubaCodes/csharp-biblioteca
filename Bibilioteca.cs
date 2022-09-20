@@ -53,7 +53,17 @@ public class Bibilioteca {
     }
     public void NuovoPrestito(Product prodotto, User utente, DateOnly inizio, DateOnly fine) {
         if (utente.Registrato == false) return;
-        Prestito nuovoPresito = new Prestito(prodotto, utente, DateOnly.FromDateTime(DateTime.Now.AddDays(10)), DateOnly.FromDateTime(DateTime.Now.AddDays(10)));
+        Prestito nuovoPresito = new Prestito(prodotto, utente, DateOnly.FromDateTime(DateTime.Now), DateOnly.FromDateTime(DateTime.Now.AddDays(10)));
         Prestiti.Add(nuovoPresito);
+    }
+    public List<Prestito> CercaPrestito(string nome, string cognome) {
+        List<Prestito> risultati = new List<Prestito>();
+        foreach (Prestito el in Prestiti) {
+            if (el.User.FirstName.ToLower() + el.User.LastName.ToLower() == nome.ToLower() + cognome.ToLower()) {
+                risultati.Add(el);
+            }
+        }
+        //if (risultati.Count == 0) return Console.WriteLine("Nessun risultato trovato");
+        return risultati;
     }
 }

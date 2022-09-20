@@ -28,3 +28,25 @@ bibilioteca.AddBook(nuovoLibro);
 //risultati di ricerca
 List<Product> risultati = bibilioteca.SearchProduct("Potter");
 Console.WriteLine(risultati[0].Title);
+//test prestito
+
+bibilioteca.NuovoPrestito(nuovoFilm, userRegistrato, DateOnly.FromDateTime(DateTime.Now), DateOnly.FromDateTime(DateTime.Now));
+//test ricerca prestito, funzionante a meno di controlli
+Console.WriteLine("Nome del prestito");
+string nomeRicerca = Console.ReadLine();
+Console.WriteLine("Cognome del prestito");
+
+string cognomeRicerca = Console.ReadLine();
+
+var ricercaPrestiti = bibilioteca.CercaPrestito(nomeRicerca, cognomeRicerca);
+
+if (ricercaPrestiti.Count > 0) { 
+    foreach(Prestito el in ricercaPrestiti)
+    {
+        Console.WriteLine(el.User.FirstName + " " + el.User.LastName);
+        Console.WriteLine("Durata");
+        Console.WriteLine(el.dataInizio);
+        Console.WriteLine(el.dataFine);
+    }
+}
+else Console.WriteLine("Nessun prestito registrato con quel nome utente");
