@@ -1,14 +1,16 @@
 ﻿// See https://aka.ms/new-console-template for more information
 public class Bibilioteca {
     //lista utenti registrati
-    List<User> RegisterdUsers = new List<User>();
+     protected List<User> RegisterdUsers = new List<User>();
     //lista film 
-    List<Movie> Movies = new List<Movie>();
+    protected List<Movie> Movies = new List<Movie>();
     //lista Libri
-    List<Book> Books = new List<Book>();
+    protected List<Book> Books = new List<Book>();
     //aggiungi e rimuove utente dalla lista
     public void AddNewUser(User utente) {
+        utente.Registrato = true;
         RegisterdUsers.Add(utente);
+        
     }
     public void RemoveUser(User utente)
     {
@@ -28,5 +30,23 @@ public class Bibilioteca {
     public void RemoveBook(Book book)
     {
         Books.Remove(book);
+    }
+    //ricerca per utente
+    public void SearchProduct(string ricerca) {
+        List<Product> risultati = new List<Product>();
+        foreach (Movie movie in Movies)
+        {
+            if (movie.Title.Contains(ricerca))
+            {
+                risultati.Add(movie);
+            }
+        }
+        foreach (Book book in Books) { 
+            if (book.Title.Contains(ricerca))
+            {
+               risultati.Add(book);
+            }
+        }
+        Console.WriteLine(risultati.ToArray());
     }
 }

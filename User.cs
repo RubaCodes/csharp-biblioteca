@@ -4,7 +4,7 @@
     public string Email { get; set; }
     public string Password { get; set; }
     public double PhoneNumber { get; set; }
-    public bool Status { get; set; }
+    public bool Registrato { get; set; }
     //costruttore
 
     public User(string lastname, string firstname, string email, string password, double phoneNumber) {
