@@ -7,5 +7,6 @@ public class Product {
     public int Shelf { get; set; }
     public string AuthorFirstName { get; set; }
     public string AuthorLastName {get; set; }
+    public bool Status { get; set; }
     
 }
