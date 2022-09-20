@@ -6,8 +6,8 @@ public class Bibilioteca {
     protected List<Movie> Movies = new List<Movie>();
     //lista Libri
     protected List<Book> Books = new List<Book>();
-    //list di prestiti
-    //protected List<Presitit>
+    //lista di prestiti
+    protected List<Prestito> Prestiti = new List<Prestito>();
     //aggiungi e rimuove utente dalla lista
     public void AddNewUser(User utente) {
         utente.Registrato = true;
@@ -51,23 +51,9 @@ public class Bibilioteca {
         }
         return risultati;
     }
-    //public List<Product> SearchProduct(string codice)
-    //{
-    //    List<Product> risultati = new List<Product>();
-    //    foreach (Movie movie in Movies)
-    //    {
-    //        if (movie.SerialCode.ToLower().Contains(codice.ToLower()))
-    //        {
-    //            risultati.Add(movie);
-    //        }
-    //    }
-    //    foreach (Book book in Books)
-    //    {
-    //        if (book.SerialCode.ToLower().Contains(codice.ToLower()))
-    //        {
-    //            risultati.Add(book);
-    //        }
-    //    }
-    //    return risultati;
-    //}
+    public void NuovoPrestito(Product prodotto, User utente, DateOnly inizio, DateOnly fine) {
+        if (utente.Registrato == false) return;
+        Prestito nuovoPresito = new Prestito(prodotto, utente, DateOnly.FromDateTime(DateTime.Now.AddDays(10)), DateOnly.FromDateTime(DateTime.Now.AddDays(10)));
+        Prestiti.Add(nuovoPresito);
+    }
 }
