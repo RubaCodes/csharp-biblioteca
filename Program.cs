@@ -10,7 +10,7 @@ Book nuovoLibro = new Book("ad1231312fsd", "Harry Potter e la pietra filosofale"
 nuovoLibro.Pagine = 750;
 Console.WriteLine(nuovoLibro.Title);
 Console.WriteLine(nuovoLibro.Pagine);
-Movie nuovoFilm = new Movie("ad65452342fsd", "Superman");
+Movie nuovoFilm = new Movie("ad65452342fsd", "Superman il grande super eroe");
 nuovoFilm.Durata = 98;
 Console.WriteLine(nuovoFilm.Title);
 Console.WriteLine(nuovoFilm.Durata);
@@ -18,6 +18,9 @@ nuovoFilm.AuthorLastName = "Rossi";
 nuovoFilm.AuthorFirstName = "Mario";
 Console.WriteLine(nuovoFilm.FullAuthorName);
 bibilioteca.AddMovie(nuovoFilm);
-bibilioteca.SearchProduct("Super");
+bibilioteca.AddBook(nuovoLibro);
+var risulati = bibilioteca.SearchProduct("Super");
+Console.WriteLine(risulati[0].Title);
+
 
 

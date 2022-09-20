@@ -32,7 +32,7 @@ public class Bibilioteca {
         Books.Remove(book);
     }
     //ricerca per utente
-    public void SearchProduct(string ricerca) {
+    public List<Product> SearchProduct(string ricerca) {
         List<Product> risultati = new List<Product>();
         foreach (Movie movie in Movies)
         {
@@ -47,6 +47,6 @@ public class Bibilioteca {
                risultati.Add(book);
             }
         }
-        Console.WriteLine(risultati.ToArray());
+        return risultati;
     }
 }
